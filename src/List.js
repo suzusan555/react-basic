@@ -1,12 +1,23 @@
 import React from 'react';
 
+ const LANGUAGES = [
+   'javascripy',
+   'PHP',
+   'Ruby',
+   'java',
+   'Go',
+   'C++'
+ ];
+
 export class List extends React.Component {
   render() {
-    const { title } = this.props;
     return(
       <div>
-        <h4>{ title }</h4>
-        <div>リストです。</div>
+        {
+          LANGUAGES.map((lang : string, index : number) => {
+            return <div key={index}>{ lang }</div>
+          })
+        }
       </div>
     )
   }
